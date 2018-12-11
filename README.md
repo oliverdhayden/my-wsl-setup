@@ -30,15 +30,21 @@ fi
 ### Get your terminal looking pretty pt.2
 - Install Oh My Zsh with `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
   - Read docs [here](https://github.com/robbyrussell/oh-my-zsh) on how to add more plugins and change themes (I went with their out of the box 'robbyrussell').
+ 
+ 
   
-### Zsh Syntax Highlighting
-This was a late addition but is an amazing add-on to the terminal. Follow the steps [here](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md) to get it up and running.
-
-### Zsh Auto Suggestions
-Another late addition but amazing as well. Just follow the **Maunal** instructions [here](https://github.com/zsh-users/zsh-autosuggestions).
-
-### Fix the ls and cd colours
+### Add path directory and fix the ls and cd colours
 Out of the box when you `ls` or `cd` + `Tab` you get some nasty background colours on the directories. To fix this, crack open your ~/.zshrc file and add this to the end:
+
+```
+vi ~/.zshrc
+```
+Under User configuration add
+
+```
+export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+```
+
 ```
 #Change ls colours
 LS_COLORS="ow=01;36;40" && export LS_COLORS
@@ -48,6 +54,16 @@ zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 autoload -Uz compinit
 compinit
 ```
+  
+  
+  
+  
+### Zsh Syntax Highlighting
+This was a late addition but is an amazing add-on to the terminal. Follow the steps [here](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md) to get it up and running.
+
+### Zsh Auto Suggestions
+Another late addition but amazing as well. Just follow the **Maunal** instructions [here](https://github.com/zsh-users/zsh-autosuggestions).
+
 
 ### Install Git
 - Run this `sudo apt update`
