@@ -54,9 +54,45 @@ zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 autoload -Uz compinit
 compinit
 ```
-  
-  
-  
+
+### Installing pip3
+python is installed by default but pip is not with this version of ubuntu (18.04).
+this is taken from https://linuxize.com/post/how-to-install-pip-on-ubuntu-18.04/
+
+```
+sudo apt update
+
+```
+
+```
+sudo apt install python3-pip
+
+```
+check its installed properly#
+
+```
+pip3 --version
+```
+Output should look like this
+```
+pip 9.0.1 from /usr/lib/python3/dist-packages (python 3.6)
+```
+
+### Installing Pipenv
+taken from with slight adjustments e.g pip becomes pip3
+https://docs.python-guide.org/dev/virtualenvs/#installing-pipenv
+
+```
+pip3 install --user pipenv
+```
+check it installed
+```
+pipenv --version
+```
+output
+```
+pipenv, version 2018.11.26
+```
   
 ### Zsh Syntax Highlighting
 This was a late addition but is an amazing add-on to the terminal. Follow the steps [here](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md) to get it up and running.
