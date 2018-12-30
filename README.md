@@ -127,8 +127,9 @@ docker -H localhost:2375 images
 
 export DOCKER_HOST=localhost:2375
 
-
 ```
+Make sure you expose the daemon on Windows, otherwise it wont't work.
+![Docker screenshot](docker.png "Docker Screenshot")
 
   
 ### Zsh Syntax Highlighting
