@@ -27,6 +27,17 @@ exec zsh
 fi
 ```
 
+if bashrc file is not running on start up - you can add the following lines to your .bash_profile file, creating that file if it does not already exist: 
+```
+vim ~/.bash_profile
+```
+
+```
+if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+fi
+```
+
 ### Get your terminal looking pretty pt.2
 - Install Oh My Zsh with `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
   - Read docs [here](https://github.com/robbyrussell/oh-my-zsh) on how to add more plugins and change themes (I went with their out of the box 'robbyrussell').
