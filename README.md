@@ -104,6 +104,32 @@ output
 ```
 pipenv, version 2018.11.26
 ```
+
+### Docker WSL
+https://medium.com/@sebagomez/installing-the-docker-client-on-ubuntus-windows-subsystem-for-linux-612b392a44c4
+The Docker Engine does not run on WSL, you HAVE to have Docker For Windows installed on your host machine. What we'll end up with at the end of this document is the Docker client running on Linux (WSL) sending commands to your Docker Engine daemon installed on Windows.
+```
+sudo apt-get update
+
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+sudo apt-key fingerprint 0EBFCD88
+
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+sudo apt-get update
+
+sudo apt-get install docker-ce
+
+docker -H localhost:2375 images
+
+export DOCKER_HOST=localhost:2375
+
+
+```
+
   
 ### Zsh Syntax Highlighting
 This was a late addition but is an amazing add-on to the terminal. Follow the steps [here](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md) to get it up and running.
